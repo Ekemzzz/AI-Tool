@@ -1,0 +1,67 @@
+:root {
+  color-scheme: light;
+
+  /* Warm paper palette */
+  --color-primary: #a62e13;
+  --color-primary-hover: #89240d;
+  --color-secondary: #6f625f;
+  --color-background: #f7f6f3;
+  --color-background-soft: #fcfbf9;
+  --color-surface: #ffffff;
+  --color-surface-muted: #efede7;
+  --color-text-primary: #343130;
+  --color-text-secondary: #665e5c;
+  --color-border: #e3e0d8;
+  --color-success: #286747;
+  --color-warning: #845600;
+  --color-error: #b42318;
+
+  /* Type */
+  --font-heading: 'Overpass Variable', 'Segoe UI', sans-serif;
+  --font-body: 'Source Sans 3 Variable', 'Segoe UI', sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.55;
+  --line-height-relaxed: 1.7;
+
+  /* Spacing */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+
+  /* Shape and depth */
+  --border-width: 1px;
+  --border-width-strong: 2px;
+  --radius-control: 6px;
+  --radius-panel: 8px;
+  --radius-dialog: 12px;
+  --radius-pill: 999px;
+  --shadow-menu: 0 8px 24px rgb(52 49 48 / 9%);
+
+  /* Layout */
+  --container-width: 72rem;
+  --reading-width: 42rem;
+  --breakpoint-mobile: 48rem;
+  --breakpoint-tablet: 64rem;
+  --breakpoint-wide: 80rem;
+
+  /* Interaction */
+  --transition-fast: 150ms;
+  --transition-standard: 220ms;
+  --ease-standard: cubic-bezier(0.16, 1, 0.3, 1);
+}
