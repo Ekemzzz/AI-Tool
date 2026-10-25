@@ -1,17 +1,17 @@
 :root {
   color-scheme: light;
 
-  /* Warm paper palette */
-  --color-primary: #a62e13;
-  --color-primary-hover: #89240d;
-  --color-secondary: #6f625f;
-  --color-background: #f7f6f3;
-  --color-background-soft: #fcfbf9;
+  /* Calm, high contrast palette */
+  --color-primary: #087f8c;
+  --color-primary-hover: #066773;
+  --color-secondary: #52656c;
+  --color-background: #f3f7f6;
+  --color-background-soft: #f8fbfa;
   --color-surface: #ffffff;
-  --color-surface-muted: #efede7;
-  --color-text-primary: #343130;
-  --color-text-secondary: #665e5c;
-  --color-border: #e3e0d8;
+  --color-surface-muted: #e9f0ef;
+  --color-text-primary: #172b32;
+  --color-text-secondary: #56696f;
+  --color-border: #d9e4e2;
   --color-success: #286747;
   --color-warning: #845600;
   --color-error: #b42318;
@@ -47,11 +47,11 @@
   /* Shape and depth */
   --border-width: 1px;
   --border-width-strong: 2px;
-  --radius-control: 6px;
-  --radius-panel: 8px;
-  --radius-dialog: 12px;
+  --radius-control: 9px;
+  --radius-panel: 14px;
+  --radius-dialog: 18px;
   --radius-pill: 999px;
-  --shadow-menu: 0 8px 24px rgb(52 49 48 / 9%);
+  --shadow-menu: 0 12px 32px rgb(23 43 50 / 12%);
 
   /* Layout */
   --container-width: 72rem;
