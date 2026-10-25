@@ -13,9 +13,10 @@ function HeroSection() {
   return (
     <section className="home-hero" aria-labelledby="home-title">
       <div className="home-hero__content">
-        <h1 id="home-title">Find AI tools for the work in front of you</h1>
+        <p className="home-hero__eyebrow">A practical AI tools directory</p>
+        <h1 id="home-title">Find the right AI tool for the task</h1>
         <p className="home-hero__description">
-          Search the sample catalog by task or category, then follow official links to learn more.
+          Search by what you need to get done, compare your options, and save tools worth revisiting.
         </p>
         <SearchBar inputId="home-tool-search" />
         <div className="search-suggestions" aria-label="Example searches">
@@ -28,7 +29,7 @@ function HeroSection() {
         </div>
       </div>
       <aside className="home-hero__aside" aria-label="Browse a few categories">
-        <p className="home-hero__aside-title">Or start with a category</p>
+        <p className="home-hero__aside-title">Browse by task</p>
         <ul>
           {featuredCategories.map((category) => (
             <li key={category.id}>
