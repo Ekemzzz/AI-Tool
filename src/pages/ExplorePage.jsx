@@ -66,15 +66,26 @@ function ExplorePage() {
             emptyDescription="Try a different search or remove one or more filters."
           />
 
-          {visiblePage < totalPages && (
+          {(visiblePage < totalPages || visiblePage > 1) && (
             <div className="explore-load-more-wrap">
-              <button
-                className="button button--secondary explore-load-more"
-                type="button"
-                onClick={() => setPage(visiblePage + 1)}
-              >
-                Load more tools
-              </button>
+              {visiblePage > 1 && (
+                <button
+                  className="button button--secondary explore-load-more"
+                  type="button"
+                  onClick={() => setPage(visiblePage - 1)}
+                >
+                  Show fewer tools
+                </button>
+              )}
+              {visiblePage < totalPages && (
+                <button
+                  className="button button--secondary explore-load-more"
+                  type="button"
+                  onClick={() => setPage(visiblePage + 1)}
+                >
+                  Load more tools
+                </button>
+              )}
             </div>
           )}
         </section>
