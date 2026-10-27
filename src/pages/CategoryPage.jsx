@@ -1,4 +1,4 @@
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { Link, useParams } from 'react-router'
 import EmptyState from '../components/common/EmptyState.jsx'
 import ExploreFilters from '../components/home/ExploreFilters.jsx'
@@ -12,6 +12,10 @@ import { applyExploreFilters, getUseCaseOptions } from '../utils/exploreFilters.
 
 function CategoryPage() {
   const { slug } = useParams()
+  const [isSmallScreen, setIsSmallScreen] = useState(() =>
+    typeof window !== 'undefined' && window.matchMedia('(max-width: 48rem)').matches,
+  )
+  const [visibleToolCount, setVisibleToolCount] = useState(5)
   const { tools, categories, loading } = useCatalog()
   const category = categories.find((item) => item.slug === slug)
   const categoryTools = useMemo(() => category ? findToolsByCategory(category.name, tools) : [], [category, tools])
@@ -25,7 +29,24 @@ function CategoryPage() {
     [categoryTools, routeScopedFilters],
   )
   const useCaseOptions = useMemo(() => getUseCaseOptions(categoryTools), [categoryTools])
+  const visibleTools = isSmallScreen ? matchingTools.slice(0, visibleToolCount) : matchingTools
   const countLabel = matchingTools.length === 1 ? 'tool' : 'tools'
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 48rem)')
+    const updateScreenSize = (event) => {
+      setIsSmallScreen(event.matches)
+      if (event.matches) setVisibleToolCount(5)
+    }
+
+    setIsSmallScreen(mediaQuery.matches)
+    mediaQuery.addEventListener('change', updateScreenSize)
+    return () => mediaQuery.removeEventListener('change', updateScreenSize)
+  }, [])
+
+  useEffect(() => {
+    setVisibleToolCount(5)
+  }, [slug, filters.q, filters.pricing, filters.useCase, filters.sort])
   usePageMeta({
     title: category ? category.name : 'Category',
     description: category
@@ -80,7 +101,31 @@ function CategoryPage() {
       />
 
       {matchingTools.length > 0 ? (
-        <ToolGrid tools={matchingTools} />
+        <>
+          <ToolGrid tools={visibleTools} />
+          {isSmallScreen && matchingTools.length > 5 && (visibleToolCount > 5 || visibleToolCount < matchingTools.length) && (
+            <div className="explore-load-more-wrap">
+              {visibleToolCount > 5 && (
+                <button
+                  className="button button--secondary explore-load-more"
+                  type="button"
+                  onClick={() => setVisibleToolCount((count) => Math.max(5, count - 5))}
+                >
+                  Show fewer tools
+                </button>
+              )}
+              {visibleToolCount < matchingTools.length && (
+                <button
+                  className="button button--secondary explore-load-more"
+                  type="button"
+                  onClick={() => setVisibleToolCount((count) => Math.min(matchingTools.length, count + 5))}
+                >
+                  Load more tools
+                </button>
+              )}
+            </div>
+          )}
+        </>
       ) : categoryTools.length === 0 ? (
         <EmptyState
           title="No tools are listed in this category yet."
