@@ -1185,6 +1185,11 @@
 }
 
 .tool-detail {
+  width: 100%;
+  max-width: none;
+}
+
+.tool-detail > :not(.tool-detail__related) {
   max-width: var(--reading-width);
 }
 
@@ -1644,7 +1649,7 @@
 }
 
 .explore-page__header > p {
-  max-width: 58ch;
+  max-width: none;
 }
 
 .explore-page__header .search-form {
