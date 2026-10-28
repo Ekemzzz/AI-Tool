@@ -5,7 +5,7 @@ function SiteFooter() {
   return (
     <footer className="site-footer">
       <div className="container site-footer__inner">
-        <p className="site-footer__description">A directory for discovering AI tools.</p>
+        <p className="site-footer__description">Find AI tools for the work you need to do.</p>
         <nav className="site-footer__navigation" aria-label="Footer navigation">
           <ul className="site-footer__list">
             {primaryNavigation.map(({ label, to }) => (
