@@ -65,3 +65,9 @@
 .submit-page__confirmation p {
   margin-block-end: 0;
 }
+
+.submit-page__confirmation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+}

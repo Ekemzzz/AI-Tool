@@ -53,7 +53,7 @@ function SubmitPage() {
 
       <h1 id="submit-title">Submit a tool</h1>
       <p>
-        Tool submissions are not open yet — the review and listing flow is planned for an upcoming
+        Tool submissions are not open yet. The review and listing flow is planned for an upcoming
         phase. Leave your email below and we'll notify you the moment the submission form goes live.
       </p>
 
@@ -61,10 +61,23 @@ function SubmitPage() {
         <div className="submit-page__confirmation" role="status">
           <CheckCircle2 aria-hidden="true" size={20} />
           <p>
-            Thanks — <strong>{email.trim()}</strong> is on the notify list. We'll reach out when
+            Thanks, <strong>{email.trim()}</strong> is on the notify list. We'll reach out when
             submissions open. In the meantime, feel free to browse the catalog.
           </p>
-          <Link className="button button--primary" to="/tools">Explore tools</Link>
+          <div className="submit-page__confirmation-actions">
+            <Link className="button button--primary" to="/tools">Explore tools</Link>
+            <button
+              className="button button--secondary"
+              type="button"
+              onClick={() => {
+                setEmail('')
+                setError('')
+                setSubmitted(false)
+              }}
+            >
+              Submit another email
+            </button>
+          </div>
         </div>
       ) : (
         <form className="submit-page__form" onSubmit={handleSubmit} noValidate>
@@ -95,7 +108,7 @@ function SubmitPage() {
             </p>
           )}
           <p className="submit-page__hint">
-            This is a waitlist only — no account is created and we never share your address.
+            This is a waitlist only. No account is created and we never share your address.
           </p>
         </form>
       )}
