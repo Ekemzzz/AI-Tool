@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="AI Tools Directory">
-  <rect width="64" height="64" rx="14" fill="#a62e13" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Eshiqo">
+  <rect width="64" height="64" rx="14" fill="#087f8c" />
   <text x="50%" y="54%" text-anchor="middle" dominant-baseline="middle"
-        font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="30"
-        font-weight="700" fill="#ffffff" letter-spacing="-1">AI</text>
+        font-family="'Segoe UI', 'Helvetica Neue', Arial, sans-serif" font-size="27"
+        font-weight="700" fill="#ffffff" letter-spacing="-2">EQ</text>
 </svg>
