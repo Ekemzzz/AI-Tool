@@ -39,7 +39,10 @@
 }
 
 .site-brand {
+  display: inline-flex;
   flex: 0 0 auto;
+  align-items: center;
+  gap: var(--space-2);
   color: var(--color-text-primary);
   font-family: var(--font-heading);
   font-size: var(--font-size-xl);
@@ -52,18 +55,17 @@
   color: var(--color-primary-hover);
 }
 
-.site-brand::before {
-  content: '✳';
+.site-brand__mark {
   display: inline-grid;
   width: 1.85rem;
   height: 1.85rem;
   place-items: center;
-  margin-inline-end: var(--space-2);
-  color: #fff;
+  color: var(--color-surface);
   background: var(--color-primary);
-  border-radius: 9px;
-  font-size: 1rem;
-  vertical-align: -0.12em;
+  border-radius: var(--radius-control);
+  font-size: var(--font-size-sm);
+  font-weight: 700;
+  letter-spacing: -0.06em;
 }
 
 .desktop-navigation,
