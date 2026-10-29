@@ -14,8 +14,9 @@ function SiteHeader() {
   return (
     <header className="site-header">
       <div className="container site-header__inner">
-        <Link className="site-brand" to="/" aria-label="AI Tools Directory home">
-          AI Tools Directory
+        <Link className="site-brand" to="/" aria-label="Eshiqo home">
+          <span className="site-brand__mark" aria-hidden="true">EQ</span>
+          <span>Eshiqo</span>
         </Link>
 
         <nav className="desktop-navigation" aria-label="Primary navigation">
