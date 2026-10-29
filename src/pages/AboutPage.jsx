@@ -17,7 +17,6 @@ function AboutPage() {
     <div className="about-page">
       <section className="about-hero" aria-labelledby="about-title">
         <div className="about-hero__content">
-          <p className="about-eyebrow">A practical starting point</p>
           <h1 id="about-title">About this directory</h1>
           <p className="about-hero__description">
             Finding an AI tool should start with what you want to do, not a list of buzzwords.
