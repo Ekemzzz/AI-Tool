@@ -1,4 +1,5 @@
 export const primaryNavigation = [
+  { label: 'Home', to: '/' },
   { label: 'About', to: '/about' },
   { label: 'Categories', to: '/categories' },
   { label: 'Explore', to: '/tools' },
